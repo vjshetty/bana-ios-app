@@ -2,6 +2,8 @@
 
 A SwiftUI iOS app for the Bunts Association of North America (BANA) that provides easy access to the BANA website and its key sections with native iOS features, comprehensive authentication, and peer-to-peer chat functionality.
 
+![BANA App Screenshot](bana-app-screenshot.png)
+
 ## Features
 
 ### 🔐 Authentication
