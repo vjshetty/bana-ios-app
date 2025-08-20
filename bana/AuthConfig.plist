@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>MSAL_CLIENT_ID</key>
+	<string>YOUR_MICROSOFT_CLIENT_ID</string>
+	<key>MSAL_REDIRECT_URI</key>
+	<string>msauth.org.bana.bana://auth</string>
+	<key>MSAL_AUTHORITY</key>
+	<string>https://login.microsoftonline.com/common</string>
+</dict>
+</plist>
