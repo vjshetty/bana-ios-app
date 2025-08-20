@@ -9,120 +9,203 @@ import SwiftUI
 import WebKit
 
 struct ContentView: View {
+    @StateObject private var authService = AuthenticationService.shared
     @State private var showMenu = false
     @State private var currentURL = "https://www.bana.org"
     @State private var currentTitle = "BANA"
+    @State private var showChat = false
     
     var body: some View {
-        NavigationView {
-            ZStack {
-                // Main Web View
-                WebView(url: URL(string: currentURL)!, title: $currentTitle)
-                    .navigationTitle(currentTitle)
-                    .navigationBarTitleDisplayMode(.inline)
-                
-                // Burger Menu Button
-                VStack {
-                    HStack {
-                        Button(action: {
-                            withAnimation(.easeInOut(duration: 0.3)) {
-                                showMenu.toggle()
-                            }
-                        }) {
-                            Image(systemName: "line.horizontal.3")
-                                .font(.title2)
-                                .foregroundColor(.primary)
-                                .padding()
-                                .background(Color(.systemBackground))
-                                .clipShape(Circle())
-                                .shadow(radius: 2)
-                        }
-                        .padding(.leading)
+        Group {
+            if authService.isAuthenticated {
+                NavigationView {
+                    ZStack {
+                        // Main Web View
+                        WebView(url: URL(string: currentURL)!, title: $currentTitle)
+                            .navigationTitle(currentTitle)
+                            .navigationBarTitleDisplayMode(.inline)
                         
-                        Spacer()
-                    }
-                    .padding(.top)
-                    
-                    Spacer()
-                }
-                
-                // Side Menu
-                if showMenu {
-                    Color.black.opacity(0.3)
-                        .ignoresSafeArea()
-                        .onTapGesture {
-                            withAnimation(.easeInOut(duration: 0.3)) {
-                                showMenu = false
-                            }
-                        }
-                    
-                    HStack {
-                        VStack(alignment: .leading, spacing: 0) {
-                            // Menu Header
-                            VStack(alignment: .leading, spacing: 8) {
-                                Text("BANA")
-                                    .font(.title2)
-                                    .fontWeight(.bold)
-                                    .foregroundColor(.primary)
-                                
-                                Text("Bunts Association of North America")
-                                    .font(.caption)
-                                    .foregroundColor(.secondary)
-                            }
-                            .padding(.horizontal, 20)
-                            .padding(.vertical, 30)
-                            .background(Color(.systemBackground))
-                            
-                            // Menu Items
-                            VStack(spacing: 0) {
-                                MenuItem(
-                                    title: "Home",
-                                    icon: "house",
-                                    isSelected: currentURL == "https://www.bana.org"
-                                ) {
-                                    navigateTo(url: "https://www.bana.org", title: "BANA")
+                        // Burger Menu Button
+                        VStack {
+                            HStack {
+                                Button(action: {
+                                    withAnimation(.easeInOut(duration: 0.3)) {
+                                        showMenu.toggle()
+                                    }
+                                }) {
+                                    Image(systemName: "line.horizontal.3")
+                                        .font(.title2)
+                                        .foregroundColor(.primary)
+                                        .padding()
+                                        .background(Color(.systemBackground))
+                                        .clipShape(Circle())
+                                        .shadow(radius: 2)
                                 }
+                                .padding(.leading)
                                 
-                                Divider()
-                                    .padding(.horizontal, 20)
+                                Spacer()
                                 
-                                MenuItem(
-                                    title: "Spotlight",
-                                    icon: "star",
-                                    isSelected: currentURL == "https://www.bana.org/blog"
-                                ) {
-                                    navigateTo(url: "https://www.bana.org/blog", title: "Spotlight")
+                                // Chat Button
+                                Button(action: {
+                                    showChat = true
+                                }) {
+                                    Image(systemName: "message")
+                                        .font(.title2)
+                                        .foregroundColor(.primary)
+                                        .padding()
+                                        .background(Color(.systemBackground))
+                                        .clipShape(Circle())
+                                        .shadow(radius: 2)
                                 }
-                                
-                                Divider()
-                                    .padding(.horizontal, 20)
-                                
-                                MenuItem(
-                                    title: "Resources",
-                                    icon: "folder",
-                                    isSelected: currentURL == "https://www.bana.org/resources"
-                                ) {
-                                    navigateTo(url: "https://www.bana.org/resources", title: "Resources")
-                                }
+                                .padding(.trailing)
                             }
+                            .padding(.top)
                             
                             Spacer()
                         }
-                        .frame(width: 280)
-                        .background(Color(.systemBackground))
-                        .offset(x: showMenu ? 0 : -280)
                         
-                        Spacer()
+                        // Side Menu
+                        if showMenu {
+                            Color.black.opacity(0.3)
+                                .ignoresSafeArea()
+                                .onTapGesture {
+                                    withAnimation(.easeInOut(duration: 0.3)) {
+                                        showMenu = false
+                                    }
+                                }
+                            
+                            HStack {
+                                VStack(alignment: .leading, spacing: 0) {
+                                    // Menu Header with User Info
+                                    VStack(alignment: .leading, spacing: 8) {
+                                        Text("BANA")
+                                            .font(.title2)
+                                            .fontWeight(.bold)
+                                            .foregroundColor(.primary)
+                                        
+                                        Text("Bunts Association of North America")
+                                            .font(.caption)
+                                            .foregroundColor(.secondary)
+                                        
+                                        // User Profile
+                                        if let user = authService.currentUser {
+                                            VStack(alignment: .leading, spacing: 4) {
+                                                Text("Signed in as")
+                                                    .font(.caption2)
+                                                    .foregroundColor(.secondary)
+                                                
+                                                Text(user.name)
+                                                    .font(.body)
+                                                    .fontWeight(.medium)
+                                                
+                                                Text(user.email)
+                                                    .font(.caption2)
+                                                    .foregroundColor(.secondary)
+                                            }
+                                            .padding(.top, 8)
+                                        }
+                                    }
+                                    .padding(.horizontal, 20)
+                                    .padding(.vertical, 30)
+                                    .background(Color(.systemBackground))
+                                    
+                                    // Menu Items
+                                    VStack(spacing: 0) {
+                                        MenuItem(
+                                            title: "Home",
+                                            icon: "house",
+                                            isSelected: currentURL == "https://www.bana.org"
+                                        ) {
+                                            navigateTo(url: "https://www.bana.org", title: "BANA")
+                                        }
+                                        
+                                        Divider()
+                                            .padding(.horizontal, 20)
+                                        
+                                        MenuItem(
+                                            title: "Spotlight",
+                                            icon: "star",
+                                            isSelected: currentURL == "https://www.bana.org/blog"
+                                        ) {
+                                            navigateTo(url: "https://www.bana.org/blog", title: "Spotlight")
+                                        }
+                                        
+                                        Divider()
+                                            .padding(.horizontal, 20)
+                                        
+                                        MenuItem(
+                                            title: "Resources",
+                                            icon: "folder",
+                                            isSelected: currentURL == "https://www.bana.org/resources"
+                                        ) {
+                                            navigateTo(url: "https://www.bana.org/resources", title: "Resources")
+                                        }
+                                        
+                                        Divider()
+                                            .padding(.horizontal, 20)
+                                        
+                                        MenuItem(
+                                            title: "Chat",
+                                            icon: "message",
+                                            isSelected: false
+                                        ) {
+                                            showChat = true
+                                            withAnimation(.easeInOut(duration: 0.3)) {
+                                                showMenu = false
+                                            }
+                                        }
+                                        
+                                        Divider()
+                                            .padding(.horizontal, 20)
+                                        
+                                        MenuItem(
+                                            title: "Sign Out",
+                                            icon: "rectangle.portrait.and.arrow.right",
+                                            isSelected: false
+                                        ) {
+                                            signOut()
+                                        }
+                                    }
+                                    
+                                    Spacer()
+                                }
+                                .frame(width: 280)
+                                .background(Color(.systemBackground))
+                                .offset(x: showMenu ? 0 : -280)
+                                
+                                Spacer()
+                            }
+                        }
                     }
                 }
+                .navigationViewStyle(StackNavigationViewStyle())
+                .sheet(isPresented: $showChat) {
+                    if let user = authService.currentUser {
+                        ChatView(currentUser: user)
+                    }
+                }
+            } else {
+                AuthenticationView()
             }
         }
-        .navigationViewStyle(StackNavigationViewStyle())
     }
     
     private func navigateTo(url: String, title: String) {
         currentURL = url
         currentTitle = title
+        withAnimation(.easeInOut(duration: 0.3)) {
+            showMenu = false
+        }
+    }
+    
+    private func signOut() {
+        Task {
+            do {
+                try await authService.signOut()
+            } catch {
+                print("Sign out error: \(error)")
+            }
+        }
         withAnimation(.easeInOut(duration: 0.3)) {
             showMenu = false
         }
