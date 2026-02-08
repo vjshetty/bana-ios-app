@@ -16,6 +16,8 @@ struct ContentView: View {
     @State private var showChat = false
     /// Pre-Event: when true, show Countdown Hero as home; when false, show WebView.
     @State private var isShowingPreEventHome = true
+    /// When true, show Map (Live / Convention Illustrated).
+    @State private var isShowingMap = false
 
     private let convention = ConventionInfo.seattle2026
     private var phase: AppPhase { convention.appPhase }
@@ -95,7 +97,9 @@ struct ContentView: View {
 
     @ViewBuilder
     private var mainContent: some View {
-        if phase == .preEvent && isShowingPreEventHome {
+        if isShowingMap {
+            MapContainerView()
+        } else if phase == .preEvent && isShowingPreEventHome {
             CountdownHeroView(
                 convention: convention,
                 onRegister: {
@@ -117,6 +121,7 @@ struct ContentView: View {
     }
 
     private var navigationTitle: String {
+        if isShowingMap { return "Map" }
         if phase == .preEvent && isShowingPreEventHome {
             return convention.name
         }
@@ -159,9 +164,10 @@ struct ContentView: View {
                 MenuItem(
                     title: "Home",
                     icon: "house",
-                    isSelected: phase == .preEvent && isShowingPreEventHome
+                    isSelected: phase == .preEvent && isShowingPreEventHome && !isShowingMap
                 ) {
                     isShowingPreEventHome = true
+                    isShowingMap = false
                     withAnimation(.easeInOut(duration: 0.3)) { showMenu = false }
                 }
 
@@ -173,6 +179,7 @@ struct ContentView: View {
                     isSelected: currentURL == "https://www.bana.org/blog"
                 ) {
                     isShowingPreEventHome = false
+                    isShowingMap = false
                     navigateTo(url: "https://www.bana.org/blog", title: "Spotlight")
                 }
 
@@ -184,7 +191,19 @@ struct ContentView: View {
                     isSelected: currentURL == "https://www.bana.org/resources"
                 ) {
                     isShowingPreEventHome = false
+                    isShowingMap = false
                     navigateTo(url: "https://www.bana.org/resources", title: "Resources")
+                }
+
+                Divider().padding(.horizontal, 20)
+
+                MenuItem(
+                    title: "Bellevue Map",
+                    icon: "map",
+                    isSelected: isShowingMap
+                ) {
+                    isShowingMap = true
+                    withAnimation(.easeInOut(duration: 0.3)) { showMenu = false }
                 }
 
                 Divider().padding(.horizontal, 20)
