@@ -71,6 +71,17 @@ struct ConventionInfo {
         components.second = 0
         return Calendar.current.date(from: components) ?? Date()
     }
+
+    private static func dateEndOfDay(_ year: Int, _ month: Int, _ day: Int) -> Date {
+        var components = DateComponents()
+        components.year = year
+        components.month = month
+        components.day = day
+        components.hour = 23
+        components.minute = 59
+        components.second = 59
+        return Calendar.current.date(from: components) ?? Date()
+    }
 }
 
 // MARK: - Schedule (offline-cacheable)
