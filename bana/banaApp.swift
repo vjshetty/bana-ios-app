@@ -2,7 +2,7 @@
 //  banaApp.swift
 //  bana
 //
-//  Created by Vijeth Shetty on 7/30/25.
+//  BANA 2026 Seattle — app entry point with global theme.
 //
 
 import SwiftUI
@@ -12,6 +12,7 @@ struct banaApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .tint(BANATheme.accent)
         }
     }
 }

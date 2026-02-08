@@ -109,6 +109,17 @@ A SwiftUI iOS app for the Bunts Association of North America (BANA) that provide
 2. **Update Configuration Files**: Replace placeholder values with actual credentials
 3. **Test Authentication**: Verify each provider works correctly
 
+### iOS Simulator (Xcode 26+)
+If you see **"CoreSimulator is out of date"** or **"iOS 26.2 is not installed"** when building:
+
+- **From Terminal** (downloads the simulator that matches your Xcode; ~8 GB, allow 15–30+ min):
+  ```bash
+  xcodebuild -downloadPlatform iOS
+  ```
+- **From Xcode**: **Xcode → Settings → Platforms** (or **Components**), then download **iOS 26.2** (or the version listed for your Xcode).
+
+Once the runtime is installed, build again with your chosen simulator destination.
+
 ### Build and Run
 1. **Open in Xcode**: Open the `bana.xcodeproj` file
 2. **Select Target**: Choose your target device or simulator
@@ -129,6 +140,8 @@ The app includes App Transport Security settings to allow:
 - Authentication provider endpoints
 
 ## App Store Submission
+
+**→ Full step-by-step guide: [PUBLISH_APPSTORE.md](PUBLISH_APPSTORE.md)**
 
 ### Prerequisites
 - **Apple Developer Program**: $99/year membership required
