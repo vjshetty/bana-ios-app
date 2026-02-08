@@ -50,7 +50,7 @@ struct ConventionInfo {
         name: "BANA 2026 Seattle",
         tagline: "25th Milestone Convention",
         conventionStartDate: Self.date(2026, 7, 30),
-        conventionEndDate: Self.date(2026, 8, 2),
+        conventionEndDate: Self.dateEndOfDay(2026, 8, 2),
         venueName: "Hyatt Regency Bellevue",
         venueCity: "Seattle",
         earlyBirdPriceAdult: 395,
