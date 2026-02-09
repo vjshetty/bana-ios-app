@@ -8,7 +8,7 @@
       "description": "BANA 2026 convention hotel. Connected to Bellevue Square.",
       "latitude": 47.6163,
       "longitude": -122.2015,
-      "hotspotRectNormalized": { "x": 0.42, "y": 0.38, "width": 0.12, "height": 0.08 }
+      "hotspotRectNormalized": { "x": 0.48, "y": 0.38, "width": 0.07, "height": 0.05 }
     },
     {
       "id": "bellevue-square",
@@ -18,7 +18,7 @@
       "description": "Major shopping and dining destination.",
       "latitude": 47.6148,
       "longitude": -122.1959,
-      "hotspotRectNormalized": { "x": 0.38, "y": 0.35, "width": 0.18, "height": 0.10 }
+      "hotspotRectNormalized": { "x": 0.36, "y": 0.32, "width": 0.16, "height": 0.10 }
     },
     {
       "id": "lincoln-square",
@@ -28,7 +28,7 @@
       "description": "Shopping, cinema, and dining. Westin Bellevue attached.",
       "latitude": 47.6172,
       "longitude": -122.2021,
-      "hotspotRectNormalized": { "x": 0.44, "y": 0.34, "width": 0.14, "height": 0.07 }
+      "hotspotRectNormalized": { "x": 0.46, "y": 0.43, "width": 0.12, "height": 0.06 }
     },
     {
       "id": "downtown-park",
@@ -38,7 +38,7 @@
       "description": "Central park with lagoon and walking loop.",
       "latitude": 47.6129,
       "longitude": -122.2044,
-      "hotspotRectNormalized": { "x": 0.48, "y": 0.48, "width": 0.16, "height": 0.12 }
+      "hotspotRectNormalized": { "x": 0.40, "y": 0.48, "width": 0.18, "height": 0.14 }
     },
     {
       "id": "meydenbauer-bay",
@@ -48,7 +48,7 @@
       "description": "Waterfront park on Lake Washington.",
       "latitude": 47.6102,
       "longitude": -122.1912,
-      "hotspotRectNormalized": { "x": 0.28, "y": 0.52, "width": 0.12, "height": 0.10 }
+      "hotspotRectNormalized": { "x": 0.16, "y": 0.62, "width": 0.12, "height": 0.10 }
     },
     {
       "id": "bellevue-arts-museum",
@@ -58,7 +58,7 @@
       "description": "Arts museum and craft fairs.",
       "latitude": 47.6138,
       "longitude": -122.1968,
-      "hotspotRectNormalized": { "x": 0.36, "y": 0.42, "width": 0.10, "height": 0.06 }
+      "hotspotRectNormalized": { "x": 0.38, "y": 0.42, "width": 0.08, "height": 0.05 }
     },
     {
       "id": "transit-center",
@@ -68,7 +68,7 @@
       "description": "Light rail and bus hub.",
       "latitude": 47.6105,
       "longitude": -122.1878,
-      "hotspotRectNormalized": { "x": 0.22, "y": 0.44, "width": 0.08, "height": 0.06 }
+      "hotspotRectNormalized": { "x": 0.50, "y": 0.46, "width": 0.08, "height": 0.06 }
     },
     {
       "id": "din-tai-fung",
@@ -78,7 +78,7 @@
       "description": "Upscale dumplings and noodles.",
       "latitude": 47.6168,
       "longitude": -122.2012,
-      "hotspotRectNormalized": { "x": 0.43, "y": 0.36, "width": 0.06, "height": 0.04 }
+      "hotspotRectNormalized": { "x": 0.47, "y": 0.40, "width": 0.06, "height": 0.04 }
     },
     {
       "id": "palomino",
@@ -86,9 +86,9 @@
       "category": "restaurant",
       "address": "700 Bellevue Way NE, Bellevue, WA 98004",
       "description": "American and Mediterranean.",
-      "latitude": 47.6170,
+      "latitude": 47.617,
       "longitude": -122.2015,
-      "hotspotRectNormalized": { "x": 0.435, "y": 0.355, "width": 0.055, "height": 0.035 }
+      "hotspotRectNormalized": { "x": 0.48, "y": 0.40, "width": 0.05, "height": 0.04 }
     },
     {
       "id": "paddy-coynes",
@@ -98,7 +98,7 @@
       "description": "Irish pub and restaurant.",
       "latitude": 47.6142,
       "longitude": -122.1985,
-      "hotspotRectNormalized": { "x": 0.39, "y": 0.40, "width": 0.05, "height": 0.04 }
+      "hotspotRectNormalized": { "x": 0.42, "y": 0.44, "width": 0.05, "height": 0.04 }
     },
     {
       "id": "wild-ginger",
@@ -106,9 +106,9 @@
       "category": "restaurant",
       "address": "11020 NE 6th St, Bellevue, WA 98004",
       "description": "Pan-Asian cuisine.",
-      "latitude": 47.6110,
-      "longitude": -122.1890,
-      "hotspotRectNormalized": { "x": 0.24, "y": 0.42, "width": 0.05, "height": 0.04 }
+      "latitude": 47.611,
+      "longitude": -122.189,
+      "hotspotRectNormalized": { "x": 0.54, "y": 0.45, "width": 0.05, "height": 0.04 }
     },
     {
       "id": "cactus",
@@ -118,7 +118,7 @@
       "description": "Southwestern and Mexican.",
       "latitude": 47.6155,
       "longitude": -122.1975,
-      "hotspotRectNormalized": { "x": 0.385, "y": 0.385, "width": 0.05, "height": 0.035 }
+      "hotspotRectNormalized": { "x": 0.44, "y": 0.41, "width": 0.05, "height": 0.04 }
     },
     {
       "id": "cheesecake-factory",
@@ -128,7 +128,7 @@
       "description": "American chain with large menu.",
       "latitude": 47.6145,
       "longitude": -122.1955,
-      "hotspotRectNormalized": { "x": 0.375, "y": 0.365, "width": 0.055, "height": 0.04 }
+      "hotspotRectNormalized": { "x": 0.38, "y": 0.35, "width": 0.06, "height": 0.04 }
     },
     {
       "id": "monsoon",
@@ -138,7 +138,7 @@
       "description": "Vietnamese and Southeast Asian.",
       "latitude": 47.6135,
       "longitude": -122.2035,
-      "hotspotRectNormalized": { "x": 0.46, "y": 0.41, "width": 0.05, "height": 0.035 }
+      "hotspotRectNormalized": { "x": 0.44, "y": 0.54, "width": 0.05, "height": 0.04 }
     },
     {
       "id": "westin",
@@ -148,7 +148,7 @@
       "description": "Hotel adjacent to Lincoln Square.",
       "latitude": 47.6165,
       "longitude": -122.2005,
-      "hotspotRectNormalized": { "x": 0.425, "y": 0.345, "width": 0.10, "height": 0.06 }
+      "hotspotRectNormalized": { "x": 0.48, "y": 0.44, "width": 0.08, "height": 0.05 }
     },
     {
       "id": "jillian-billards",
@@ -158,7 +158,7 @@
       "description": "Games, food, and drinks.",
       "latitude": 47.6169,
       "longitude": -122.2018,
-      "hotspotRectNormalized": { "x": 0.438, "y": 0.358, "width": 0.05, "height": 0.032 }
+      "hotspotRectNormalized": { "x": 0.49, "y": 0.41, "width": 0.05, "height": 0.035 }
     }
   ]
 }

@@ -154,7 +154,7 @@ struct ZoomableImageScrollView: UIViewRepresentable {
         }
         if centerOnHyattTrigger, let img = image {
             centerOnHyattTrigger = false
-            let rect = HotspotRectNormalized(x: 0.42, y: 0.38, width: 0.12, height: 0.08)
+            let rect = HotspotRectNormalized(x: 0.48, y: 0.38, width: 0.07, height: 0.05)
             let centerX = (rect.x + rect.width / 2) * img.size.width
             let centerY = (rect.y + rect.height / 2) * img.size.height
             centerOn(scrollView: scrollView, imageSize: img.size, imagePointX: CGFloat(centerX), imagePointY: CGFloat(centerY))
