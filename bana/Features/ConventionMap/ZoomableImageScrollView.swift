@@ -86,6 +86,8 @@ struct ZoomableImageScrollView: UIViewRepresentable {
     var onTapInImage: ((CGPoint) -> Void)?
     @Binding var recenterTrigger: Bool
     @Binding var centerOnHyattTrigger: Bool
+    /// Hyatt rect from JSON (single source of truth). When "Hyatt" is tapped, we center on this rect's center.
+    var hyattRectNormalized: HotspotRectNormalized?
 
     func makeCoordinator() -> ZoomableImageScrollViewCoordinator {
         let c = ZoomableImageScrollViewCoordinator()
@@ -152,9 +154,8 @@ struct ZoomableImageScrollView: UIViewRepresentable {
             recenterTrigger = false
             fitToBounds(scrollView: scrollView, imageView: imageView)
         }
-        if centerOnHyattTrigger, let img = image {
+        if centerOnHyattTrigger, let img = image, let rect = hyattRectNormalized {
             centerOnHyattTrigger = false
-            let rect = HotspotRectNormalized(x: 0.48, y: 0.38, width: 0.07, height: 0.05)
             let centerX = (rect.x + rect.width / 2) * img.size.width
             let centerY = (rect.y + rect.height / 2) * img.size.height
             centerOn(scrollView: scrollView, imageSize: img.size, imagePointX: CGFloat(centerX), imagePointY: CGFloat(centerY))

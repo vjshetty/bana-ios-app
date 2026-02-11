@@ -25,7 +25,8 @@ struct ConventionMapIllustratedScreen: View {
                     state: $scrollState,
                     onTapInImage: handleTapInImage,
                     recenterTrigger: $recenterTrigger,
-                    centerOnHyattTrigger: $centerOnHyattTrigger
+                    centerOnHyattTrigger: $centerOnHyattTrigger,
+                    hyattRectNormalized: viewModel.hyattHotspot?.hotspotRectNormalized
                 )
                 .overlay(
                     HotspotOverlayView(
