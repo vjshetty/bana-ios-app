@@ -1,0 +1,164 @@
+{
+  "hotspots": [
+    {
+      "id": "hyatt",
+      "name": "Hyatt Regency Bellevue",
+      "category": "hotel",
+      "address": "900 Bellevue Way NE, Bellevue, WA 98004",
+      "description": "BANA 2026 convention hotel. Connected to Bellevue Square.",
+      "latitude": 47.6163,
+      "longitude": -122.2015,
+      "hotspotRectNormalized": { "x": 0.48, "y": 0.38, "width": 0.07, "height": 0.05 }
+    },
+    {
+      "id": "bellevue-square",
+      "name": "Bellevue Square / The Bellevue Collection",
+      "category": "landmark",
+      "address": "575 Bellevue Square, Bellevue, WA 98004",
+      "description": "Major shopping and dining destination.",
+      "latitude": 47.6148,
+      "longitude": -122.1959,
+      "hotspotRectNormalized": { "x": 0.36, "y": 0.32, "width": 0.16, "height": 0.10 }
+    },
+    {
+      "id": "lincoln-square",
+      "name": "Lincoln Square",
+      "category": "landmark",
+      "address": "700 Bellevue Way NE, Bellevue, WA 98004",
+      "description": "Shopping, cinema, and dining. Westin Bellevue attached.",
+      "latitude": 47.6172,
+      "longitude": -122.2021,
+      "hotspotRectNormalized": { "x": 0.46, "y": 0.43, "width": 0.12, "height": 0.06 }
+    },
+    {
+      "id": "downtown-park",
+      "name": "Bellevue Downtown Park",
+      "category": "park",
+      "address": "10201 NE 4th St, Bellevue, WA 98004",
+      "description": "Central park with lagoon and walking loop.",
+      "latitude": 47.6129,
+      "longitude": -122.2044,
+      "hotspotRectNormalized": { "x": 0.40, "y": 0.48, "width": 0.18, "height": 0.14 }
+    },
+    {
+      "id": "meydenbauer-bay",
+      "name": "Meydenbauer Bay Park",
+      "category": "park",
+      "address": "99th Ave NE & NE 2nd St, Bellevue, WA 98004",
+      "description": "Waterfront park on Lake Washington.",
+      "latitude": 47.6102,
+      "longitude": -122.1912,
+      "hotspotRectNormalized": { "x": 0.16, "y": 0.62, "width": 0.12, "height": 0.10 }
+    },
+    {
+      "id": "bellevue-arts-museum",
+      "name": "Bellevue Arts Museum",
+      "category": "landmark",
+      "address": "510 Bellevue Way NE, Bellevue, WA 98004",
+      "description": "Arts museum and craft fairs.",
+      "latitude": 47.6138,
+      "longitude": -122.1968,
+      "hotspotRectNormalized": { "x": 0.38, "y": 0.42, "width": 0.08, "height": 0.05 }
+    },
+    {
+      "id": "transit-center",
+      "name": "Bellevue Transit Center",
+      "category": "landmark",
+      "address": "10850 NE 6th St, Bellevue, WA 98004",
+      "description": "Light rail and bus hub.",
+      "latitude": 47.6105,
+      "longitude": -122.1878,
+      "hotspotRectNormalized": { "x": 0.50, "y": 0.46, "width": 0.08, "height": 0.06 }
+    },
+    {
+      "id": "din-tai-fung",
+      "name": "Din Tai Fung",
+      "category": "restaurant",
+      "address": "700 Bellevue Way NE, Bellevue, WA 98004",
+      "description": "Upscale dumplings and noodles.",
+      "latitude": 47.6168,
+      "longitude": -122.2012,
+      "hotspotRectNormalized": { "x": 0.47, "y": 0.40, "width": 0.06, "height": 0.04 }
+    },
+    {
+      "id": "palomino",
+      "name": "Palomino",
+      "category": "restaurant",
+      "address": "700 Bellevue Way NE, Bellevue, WA 98004",
+      "description": "American and Mediterranean.",
+      "latitude": 47.617,
+      "longitude": -122.2015,
+      "hotspotRectNormalized": { "x": 0.48, "y": 0.40, "width": 0.05, "height": 0.04 }
+    },
+    {
+      "id": "paddy-coynes",
+      "name": "Paddy Coyne's",
+      "category": "restaurant",
+      "address": "419 108th Ave NE, Bellevue, WA 98004",
+      "description": "Irish pub and restaurant.",
+      "latitude": 47.6142,
+      "longitude": -122.1985,
+      "hotspotRectNormalized": { "x": 0.42, "y": 0.44, "width": 0.05, "height": 0.04 }
+    },
+    {
+      "id": "wild-ginger",
+      "name": "Wild Ginger",
+      "category": "restaurant",
+      "address": "11020 NE 6th St, Bellevue, WA 98004",
+      "description": "Pan-Asian cuisine.",
+      "latitude": 47.611,
+      "longitude": -122.189,
+      "hotspotRectNormalized": { "x": 0.54, "y": 0.45, "width": 0.05, "height": 0.04 }
+    },
+    {
+      "id": "cactus",
+      "name": "Cactus",
+      "category": "restaurant",
+      "address": "4220 106th Ave NE, Bellevue, WA 98004",
+      "description": "Southwestern and Mexican.",
+      "latitude": 47.6155,
+      "longitude": -122.1975,
+      "hotspotRectNormalized": { "x": 0.44, "y": 0.41, "width": 0.05, "height": 0.04 }
+    },
+    {
+      "id": "cheesecake-factory",
+      "name": "The Cheesecake Factory",
+      "category": "restaurant",
+      "address": "Bellevue Square, 575 Bellevue Way NE, Bellevue, WA 98004",
+      "description": "American chain with large menu.",
+      "latitude": 47.6145,
+      "longitude": -122.1955,
+      "hotspotRectNormalized": { "x": 0.38, "y": 0.35, "width": 0.06, "height": 0.04 }
+    },
+    {
+      "id": "monsoon",
+      "name": "Monsoon Bellevue",
+      "category": "restaurant",
+      "address": "10245 Main St, Bellevue, WA 98004",
+      "description": "Vietnamese and Southeast Asian.",
+      "latitude": 47.6135,
+      "longitude": -122.2035,
+      "hotspotRectNormalized": { "x": 0.44, "y": 0.54, "width": 0.05, "height": 0.04 }
+    },
+    {
+      "id": "westin",
+      "name": "The Westin Bellevue",
+      "category": "hotel",
+      "address": "600 Bellevue Way NE, Bellevue, WA 98004",
+      "description": "Hotel adjacent to Lincoln Square.",
+      "latitude": 47.6165,
+      "longitude": -122.2005,
+      "hotspotRectNormalized": { "x": 0.48, "y": 0.44, "width": 0.08, "height": 0.05 }
+    },
+    {
+      "id": "jillian-billards",
+      "name": "Jillian's Billiard Club",
+      "category": "restaurant",
+      "address": "700 Bellevue Way NE, Bellevue, WA 98004",
+      "description": "Games, food, and drinks.",
+      "latitude": 47.6169,
+      "longitude": -122.2018,
+      "hotspotRectNormalized": { "x": 0.49, "y": 0.41, "width": 0.05, "height": 0.035 }
+    }
+  ]
+}

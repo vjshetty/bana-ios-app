@@ -43,6 +43,15 @@ A SwiftUI iOS app for the Bunts Association of North America (BANA) that provide
   - Community obituaries and memorials
   - Regional celebrations and events
 
+### 🗺️ Bellevue Map
+- **Map** menu: switch between **Live Map** (placeholder) and **Convention Map** (illustrated).
+- **Convention Map (Illustrated)**:
+  - Pinch-to-zoom and pan on the Downtown Bellevue illustrated map image.
+  - Tappable hotspots (Hyatt, parks, landmarks, restaurants) with category filter.
+  - Place card sheet with name, description, address, **Directions** (walking from Hyatt via Apple Maps), and **Copy Address**.
+  - **Recenter** and **Hyatt** buttons; **Hotspots** on/off toggle.
+- Hotspot data: `bana/Resources/bellevue_hotspots.json`. See [Convention Map – Hotspots](#convention-map--hotspots) below to add or edit hotspots.
+
 ### 📚 Resources Section
 - Access to BANA's resources page (https://www.bana.org/resources)
 - Community resources including:
@@ -173,6 +182,24 @@ The app includes App Transport Security settings to allow:
 - **Version**: 1.0
 - **Build**: 1
 - **Deployment Target**: iOS 14.0+
+
+## Convention Map – Hotspots
+
+The illustrated Convention Map uses **normalized coordinates** (0.0–1.0) for hotspot rectangles so the same JSON works on all device sizes.
+
+- **Data file:** `bana/Resources/bellevue_hotspots.json`
+- **Image asset:** Add your illustrated map as `bellevue_downtown_map` in **Assets** (1x image; 2x/3x optional). If missing, the screen shows a placeholder.
+
+### Adding or editing hotspots
+
+1. Open `bana/Resources/bellevue_hotspots.json`.
+2. Each hotspot has:
+   - `id`, `name`, `category` (`hotel` | `restaurant` | `park` | `landmark`)
+   - `address`, `description` (optional)
+   - `latitude`, `longitude` (for Apple Maps directions)
+   - `hotspotRectNormalized`: `{ "x", "y", "width", "height" }` — values **0.0 to 1.0** relative to the image (e.g. `x: 0.5` = center horizontally).
+3. To **tweak tap areas**: open the map image in an editor, note the pixel position of the place (e.g. 460/1000 = 0.46 for x). Set `x` = pixelX/imageWidth, `y` = pixelY/imageHeight, and choose a small `width`/`height` (e.g. 0.05–0.12) for the tappable region.
+4. Restart the app to reload JSON.
 
 ## About BANA
 
